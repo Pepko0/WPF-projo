@@ -8,6 +8,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
+using WPF_projo.ViewModels;
 
 namespace WPF_projo
 {
@@ -19,6 +21,14 @@ namespace WPF_projo
         public MainWindow()
         {
             InitializeComponent();
+
+            DataContext = new MainViewModel();
+        }
+
+        public void OpenLoginWindow_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.ShowDialog();
         }
     }
 }
